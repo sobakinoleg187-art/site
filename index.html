@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ООО «Центр Комплаенс-Контроля»</title>
+    <meta
+      name="description"
+      content="Информационный сайт ООО «Центр Комплаенс-Контроля»: сведения об организации, направления работы, принципы и контакты."
+    />
+    <style>
+      :root {
+        --paper: #fff8ef;
+        --paper-strong: #fff2e0;
+        --ink: #241c1a;
+        --muted: #665b57;
+        --accent: #ff5a4a;
+        --accent-dark: #dc3029;
+        --glass: rgba(240, 252, 255, 0.54);
+        --glass-edge: rgba(255, 255, 255, 0.86);
+        --emerald: #0a7b43;
+        --emerald-bright: #2ed15f;
+        --deep-green: #061a14;
+        --graphite: #101614;
+        --spartak: #d71920;
+        --sage: #d9eee0;
+        --sky: #dfeefe;
+        --sun: #ffe08a;
+        --line: rgba(36, 28, 26, 0.14);
+        --shadow: 0 24px 70px rgba(87, 53, 35, 0.13);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-shell {
+        overflow: hidden;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(18px, 4vw, 56px);
+        background: rgba(6, 26, 20, 0.88);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        backdrop-filter: blur(18px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        color: var(--paper);
+        font-weight: 850;
+        letter-spacing: 0;
+      }
+
+      .brand-mark {
+        position: relative;
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--spartak);
+        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+      }
+
+      .brand-mark::before,
+      .brand-mark::after {
+        position: absolute;
+        content: "";
+        background: var(--paper);
+      }
+
+      .brand-mark::before {
+        width: 18px;
+        height: 4px;
+        left: 8px;
+        top: 12px;
+        border-radius: 999px;
+        transform: rotate(-35deg);
+      }
+
+      .brand-mark::after {
+        width: 11px;
+        height: 4px;
+        left: 8px;
+        top: 18px;
+        border-radius: 999px;
+        transform: rotate(38deg);
+      }
+
+      .brand-text {
+        max-width: 280px;
+        overflow-wrap: anywhere;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .nav a {
+        padding: 9px 12px;
+        border-radius: var(--radius);
+        color: rgba(255, 248, 239, 0.76);
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+      }
+
+      .section {
+        padding: clamp(64px, 9vw, 132px) clamp(18px, 4vw, 56px);
+      }
+
+      .section-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100svh - 74px);
+        display: grid;
+        align-items: center;
+        padding-top: clamp(54px, 8vw, 110px);
+        padding-bottom: clamp(42px, 7vw, 88px);
+        color: var(--paper);
+        background:
+          radial-gradient(circle at 75% 30%, rgba(46, 209, 95, 0.28), transparent 28%),
+          radial-gradient(circle at 55% 70%, rgba(9, 129, 70, 0.32), transparent 38%),
+          linear-gradient(135deg, #071512 0%, #0c291e 47%, #111715 100%),
+          repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 44px,
+            rgba(255, 255, 255, 0.035) 45px
+          );
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        align-items: center;
+        gap: clamp(28px, 6vw, 88px);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        margin: 0 0 22px;
+        padding: 9px 14px 9px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 248, 239, 0.9);
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      }
+
+      .spartak-badge {
+        position: relative;
+        display: inline-grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #fff;
+        border-radius: 6px;
+        background: var(--spartak);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 950;
+        line-height: 1;
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.32);
+      }
+
+      .spartak-badge span {
+        transform: rotate(-45deg);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 840px;
+        margin-bottom: 28px;
+        font-size: clamp(48px, 9vw, 118px);
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        max-width: 840px;
+        margin-bottom: 26px;
+        font-size: clamp(38px, 6vw, 76px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        margin-bottom: 12px;
+        font-size: clamp(22px, 2.4vw, 30px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 690px;
+        margin-bottom: 32px;
+        color: rgba(255, 248, 239, 0.76);
+        font-size: clamp(19px, 2vw, 25px);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 18px;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--accent);
+        box-shadow: 5px 5px 0 var(--ink);
+        color: var(--ink);
+        font-weight: 850;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translate(2px, 2px);
+        box-shadow: 3px 3px 0 var(--ink);
+        outline: none;
+      }
+
+      .button.secondary {
+        background: #fff;
+      }
+
+      .hero .button {
+        border-color: rgba(0, 0, 0, 0.72);
+        background: var(--spartak);
+        color: #fff;
+        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.72);
+      }
+
+      .hero .button.secondary {
+        border-color: rgba(255, 255, 255, 0.42);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--paper);
+        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.42);
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 530px;
+      }
+
+      .rook-stage {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        perspective: 1100px;
+      }
+
+      .rook-halo {
+        position: absolute;
+        width: min(500px, 90%);
+        aspect-ratio: 1;
+        border: 1px solid rgba(151, 255, 183, 0.22);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 42% 34%, rgba(46, 209, 95, 0.28), transparent 20%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 46%),
+          linear-gradient(315deg, rgba(5, 84, 48, 0.46), transparent 58%);
+        box-shadow:
+          inset 0 0 0 18px rgba(255, 255, 255, 0.035),
+          0 0 80px rgba(46, 209, 95, 0.22);
+      }
+
+      .rook-plinth {
+        position: absolute;
+        bottom: 54px;
+        width: min(420px, 82%);
+        height: 66px;
+        border: 1px solid rgba(206, 255, 223, 0.42);
+        border-radius: 50%;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.72), rgba(17, 117, 61, 0.56), rgba(255, 255, 255, 0.36)),
+          rgba(4, 43, 28, 0.42);
+        box-shadow:
+          0 28px 70px rgba(0, 0, 0, 0.38),
+          inset 0 2px 12px rgba(255, 255, 255, 0.54);
+        transform: rotateX(68deg);
+      }
+
+      .glass-rook {
+        position: relative;
+        width: min(350px, 62vw);
+        aspect-ratio: 300 / 430;
+        transform-style: preserve-3d;
+        animation: rook-spin 10s ease-in-out infinite;
+        filter: drop-shadow(0 28px 42px rgba(0, 0, 0, 0.42));
+      }
+
+      .glass-rook svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      @keyframes rook-spin {
+        0% {
+          transform: rotateY(-22deg) rotateX(2deg) translateY(0);
+        }
+
+        50% {
+          transform: rotateY(22deg) rotateX(2deg) translateY(-8px);
+        }
+
+        100% {
+          transform: rotateY(-22deg) rotateX(2deg) translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .glass-rook {
+          animation: none;
+          transform: rotateY(-18deg) rotateX(2deg);
+        }
+
+        [data-animate] .animate-item {
+          opacity: 1;
+          clip-path: none;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      .about-band {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .about-band .lead,
+      .about-band .section-label {
+        color: rgba(255, 248, 239, 0.72);
+      }
+
+      .section-label {
+        margin-bottom: 18px;
+        color: var(--accent-dark);
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+        gap: clamp(26px, 6vw, 82px);
+        align-items: start;
+      }
+
+      .text-stack {
+        display: grid;
+        gap: 18px;
+        color: rgba(255, 248, 239, 0.82);
+        font-size: clamp(18px, 1.7vw, 22px);
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .fact {
+        min-height: 142px;
+        padding: 22px;
+        border: 1px solid rgba(255, 248, 239, 0.18);
+        border-radius: var(--radius);
+        background: rgba(255, 248, 239, 0.08);
+      }
+
+      .fact strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #fff;
+        font-size: 28px;
+        line-height: 1;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .service-card,
+      .principle,
+      .contact-panel {
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: 7px 7px 0 var(--ink);
+      }
+
+      .service-card {
+        min-height: 320px;
+        padding: 24px;
+      }
+
+      .service-card:nth-child(2) {
+        background: var(--sky);
+      }
+
+      .service-card:nth-child(3) {
+        background: var(--sage);
+      }
+
+      .service-card:nth-child(4) {
+        background: var(--sun);
+      }
+
+      .service-card:nth-child(5) {
+        background: #fff;
+      }
+
+      .service-card:nth-child(6) {
+        background: var(--paper-strong);
+      }
+
+      .card-number {
+        display: inline-grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        margin-bottom: 24px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--accent);
+        font-weight: 900;
+      }
+
+      .service-card p,
+      .principle p,
+      .contact-panel p {
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .process {
+        display: grid;
+        gap: 10px;
+        counter-reset: process;
+      }
+
+      .process-step {
+        position: relative;
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        align-items: center;
+        gap: 22px;
+        min-height: 116px;
+        padding: 22px;
+        border-top: 2px solid var(--ink);
+      }
+
+      .process-step:last-child {
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .process-step::before {
+        counter-increment: process;
+        content: counter(process, decimal-leading-zero);
+        display: grid;
+        place-items: center;
+        width: 64px;
+        height: 64px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--accent);
+        font-weight: 900;
+      }
+
+      .process-step h3 {
+        margin-bottom: 4px;
+      }
+
+      .process-step p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      [data-animate] .animate-item {
+        opacity: 0;
+        transition:
+          opacity 680ms ease,
+          transform 680ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          clip-path 680ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        transition-delay: calc(var(--order, 0) * 80ms);
+        will-change: opacity, transform, clip-path;
+      }
+
+      [data-animate="facts"] .animate-item {
+        transform: translateY(28px) scale(0.94);
+      }
+
+      [data-animate="facts"].is-visible .animate-item {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      [data-animate="cards"] .animate-item {
+        transform: translateY(42px) rotate(-3deg);
+      }
+
+      [data-animate="cards"].is-visible .animate-item {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+      }
+
+      [data-animate="steps"] .animate-item {
+        clip-path: inset(0 100% 0 0);
+        transform: translateX(-34px);
+      }
+
+      [data-animate="steps"].is-visible .animate-item {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateX(0);
+      }
+
+      .animate-item:nth-child(1) {
+        --order: 0;
+      }
+
+      .animate-item:nth-child(2) {
+        --order: 1;
+      }
+
+      .animate-item:nth-child(3) {
+        --order: 2;
+      }
+
+      .animate-item:nth-child(4) {
+        --order: 3;
+      }
+
+      .animate-item:nth-child(5) {
+        --order: 4;
+      }
+
+      .animate-item:nth-child(6) {
+        --order: 5;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        [data-animate] .animate-item {
+          opacity: 1;
+          clip-path: none;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      .principles-band {
+        background: var(--paper-strong);
+      }
+
+      .principles-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .principle {
+        min-height: 194px;
+        padding: 24px;
+      }
+
+      .principle.big {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 406px;
+        background: var(--accent);
+      }
+
+      .principle.big p {
+        color: rgba(36, 28, 26, 0.78);
+        font-size: clamp(20px, 2vw, 27px);
+      }
+
+      .principle-column {
+        display: grid;
+        gap: 18px;
+      }
+
+      .details {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: clamp(24px, 5vw, 64px);
+        align-items: start;
+      }
+
+      .requisites {
+        display: grid;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .requisites li {
+        display: grid;
+        grid-template-columns: minmax(116px, 0.36fr) 1fr;
+        gap: 18px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .requisites span {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .contact-band {
+        padding-bottom: clamp(36px, 5vw, 72px);
+      }
+
+      .contact-panel {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        align-items: center;
+        padding: clamp(24px, 5vw, 46px);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .contact-panel p {
+        max-width: 640px;
+        color: rgba(255, 248, 239, 0.74);
+      }
+
+      .contact-links {
+        display: grid;
+        gap: 10px;
+        min-width: min(360px, 100%);
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px;
+        border: 1px solid rgba(255, 248, 239, 0.2);
+        border-radius: var(--radius);
+        background: rgba(255, 248, 239, 0.08);
+        color: #fff;
+        font-weight: 850;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 24px clamp(18px, 4vw, 56px) 36px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 920px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+
+        .hero-grid,
+        .split,
+        .principles-grid,
+        .details,
+        .contact-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-visual {
+          min-height: 470px;
+        }
+
+        .rook-stage {
+          position: relative;
+          inset: auto;
+        }
+
+        .grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .contact-links {
+          min-width: 0;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar {
+          padding: 14px 16px;
+        }
+
+        .nav a {
+          padding: 8px 9px;
+          font-size: 14px;
+        }
+
+        .section {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        h1 {
+          font-size: clamp(44px, 17vw, 70px);
+        }
+
+        .hero-actions,
+        .button {
+          width: 100%;
+        }
+
+        .hero-visual {
+          min-height: 430px;
+        }
+
+        .glass-rook {
+          scale: 0.84;
+        }
+
+        .rook-plinth {
+          bottom: 38px;
+        }
+
+        .facts,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .process-step {
+          grid-template-columns: 1fr;
+        }
+
+        .principle.big {
+          min-height: 270px;
+        }
+
+        .requisites li {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" aria-label="Верхняя навигация">
+        <a class="brand" href="#top" aria-label="На главную">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">Центр Комплаенс-Контроля</span>
+        </a>
+        <nav class="nav" aria-label="Разделы сайта">
+          <a href="#about">О компании</a>
+          <a href="#services">Направления</a>
+          <a href="#process">Подход</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="section hero" aria-labelledby="hero-title">
+          <div class="section-inner hero-grid">
+            <div>
+              <p class="eyebrow">
+                <span class="spartak-badge" aria-hidden="true"><span>С</span></span>
+                Спартак - чемпион!
+              </p>
+              <h1 id="hero-title">ООО «Центр Комплаенс-Контроля»</h1>
+              <p class="lead">
+                Организация, которая помогает выстраивать прозрачные процессы,
+                контролировать соблюдение требований и поддерживать деловую
+                устойчивость компании.
+              </p>
+              <div class="hero-actions" aria-label="Быстрые ссылки">
+                <a class="button" href="#about">О компании</a>
+                <a class="button secondary" href="#details">Сведения</a>
+              </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="rook-stage">
+                <div class="rook-halo"></div>
+                <div class="rook-plinth"></div>
+                <div class="glass-rook">
+                  <svg viewBox="0 0 300 430" role="img" aria-label="Стеклянная шахматная фигура ладьи">
+                    <defs>
+                      <linearGradient id="rookGlass" x1="12%" y1="8%" x2="88%" y2="96%">
+                        <stop offset="0" stop-color="#f8fff9" stop-opacity="0.86" />
+                        <stop offset="0.15" stop-color="#67e47b" stop-opacity="0.72" />
+                        <stop offset="0.36" stop-color="#0f884b" stop-opacity="0.92" />
+                        <stop offset="0.61" stop-color="#052819" stop-opacity="0.96" />
+                        <stop offset="0.82" stop-color="#24b84d" stop-opacity="0.78" />
+                        <stop offset="1" stop-color="#f7fff8" stop-opacity="0.76" />
+                      </linearGradient>
+                      <linearGradient id="rookDark" x1="24%" y1="0" x2="92%" y2="100%">
+                        <stop offset="0" stop-color="#42d466" stop-opacity="0.2" />
+                        <stop offset="0.52" stop-color="#022112" stop-opacity="0.72" />
+                        <stop offset="1" stop-color="#010f09" stop-opacity="0.36" />
+                      </linearGradient>
+                      <radialGradient id="rookGlow" cx="30%" cy="30%" r="62%">
+                        <stop offset="0" stop-color="#9dff9c" stop-opacity="0.8" />
+                        <stop offset="0.42" stop-color="#1a9b4d" stop-opacity="0.36" />
+                        <stop offset="1" stop-color="#061a14" stop-opacity="0" />
+                      </radialGradient>
+                      <linearGradient id="rookEdge" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#ffffff" stop-opacity="0.9" />
+                        <stop offset="0.32" stop-color="#ffffff" stop-opacity="0.05" />
+                        <stop offset="0.72" stop-color="#03160d" stop-opacity="0.34" />
+                        <stop offset="1" stop-color="#ffffff" stop-opacity="0.82" />
+                      </linearGradient>
+                      <filter id="rookSoftGlass" x="-18%" y="-18%" width="136%" height="136%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
+                        <feOffset dy="6" result="offset" />
+                        <feColorMatrix
+                          in="offset"
+                          type="matrix"
+                          values="0 0 0 0 0  0 0 0 0 0.08  0 0 0 0 0.04  0 0 0 .35 0"
+                        />
+                        <feMerge>
+                          <feMergeNode />
+                          <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <ellipse
+                      cx="150"
+                      cy="407"
+                      rx="118"
+                      ry="18"
+                      fill="#02150c"
+                      opacity="0.34"
+                    />
+                    <path
+                      d="M82 105 L82 35 L113 35 L113 65 L136 65 L136 35 L164 35 L164 65 L187 65 L187 35 L218 35 L218 105 C211 124 189 135 150 135 C111 135 89 124 82 105 Z"
+                      fill="url(#rookGlass)"
+                      filter="url(#rookSoftGlass)"
+                      stroke="rgba(236,255,241,.78)"
+                      stroke-width="3"
+                    />
+                    <ellipse
+                      cx="150"
+                      cy="105"
+                      rx="68"
+                      ry="25"
+                      fill="url(#rookGlass)"
+                      stroke="rgba(236,255,241,.72)"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M102 124 C116 144 118 181 110 226 C105 253 99 282 92 318 C105 337 123 346 150 346 C177 346 195 337 208 318 C201 281 195 253 190 226 C182 181 184 144 198 124 C187 133 171 138 150 138 C129 138 113 133 102 124 Z"
+                      fill="url(#rookGlass)"
+                      stroke="rgba(236,255,241,.72)"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M154 134 C188 159 199 209 193 264 C190 288 183 311 174 331 C201 318 213 295 215 260 C218 209 204 158 198 124 C188 133 172 138 154 134 Z"
+                      fill="url(#rookDark)"
+                      opacity="0.82"
+                    />
+                    <ellipse
+                      cx="150"
+                      cy="339"
+                      rx="81"
+                      ry="28"
+                      fill="url(#rookGlass)"
+                      stroke="rgba(236,255,241,.72)"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M82 349 C62 362 54 381 64 394 C76 410 111 413 150 413 C189 413 224 410 236 394 C246 381 238 362 218 349 C201 362 179 368 150 368 C121 368 99 362 82 349 Z"
+                      fill="url(#rookGlass)"
+                      stroke="rgba(236,255,241,.72)"
+                      stroke-width="3"
+                    />
+                    <ellipse
+                      cx="150"
+                      cy="390"
+                      rx="96"
+                      ry="26"
+                      fill="url(#rookGlass)"
+                      stroke="rgba(236,255,241,.7)"
+                      stroke-width="3"
+                    />
+                    <path
+                      d="M87 74 C112 88 190 88 214 74"
+                      fill="none"
+                      stroke="url(#rookEdge)"
+                      stroke-width="12"
+                      stroke-linecap="round"
+                      opacity="0.72"
+                    />
+                    <path
+                      d="M113 139 C127 169 127 231 112 300"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="12"
+                      stroke-linecap="round"
+                      opacity="0.38"
+                    />
+                    <path
+                      d="M179 141 C202 187 202 262 187 313"
+                      fill="none"
+                      stroke="#02170f"
+                      stroke-width="22"
+                      stroke-linecap="round"
+                      opacity="0.28"
+                    />
+                    <path
+                      d="M90 191 C118 178 181 178 210 191"
+                      fill="none"
+                      stroke="#58f277"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      opacity="0.38"
+                    />
+                    <path
+                      d="M88 232 C118 219 182 219 212 232"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      opacity="0.25"
+                    />
+                    <path
+                      d="M78 333 C112 346 188 346 222 333"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="11"
+                      stroke-linecap="round"
+                      opacity="0.38"
+                    />
+                    <path
+                      d="M64 386 C102 399 198 399 236 386"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="9"
+                      stroke-linecap="round"
+                      opacity="0.44"
+                    />
+                    <path
+                      d="M82 105 C108 123 191 123 218 105 L206 136 C176 151 124 151 94 136 Z"
+                      fill="url(#rookGlow)"
+                      opacity="0.72"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section about-band" id="about" aria-labelledby="about-title" data-animate="facts">
+          <div class="section-inner split">
+            <div>
+              <p class="section-label">О компании</p>
+              <h2 id="about-title">Работаем с требованиями, процессами и рисками.</h2>
+            </div>
+            <div class="text-stack">
+              <p>
+                ООО «Центр Комплаенс-Контроля» оказывает организационную,
+                методическую и аналитическую поддержку в области внутреннего
+                контроля, деловой этики и соблюдения обязательных требований.
+              </p>
+              <p>
+                Основная задача компании — помогать организациям видеть
+                регуляторные и операционные риски заранее, фиксировать понятные
+                правила работы и поддерживать управляемую среду контроля.
+              </p>
+              <div class="facts" aria-label="Ключевые свойства">
+                <div class="fact animate-item">
+                  <strong>01</strong>
+                  Документируем процессы и зоны ответственности.
+                </div>
+                <div class="fact animate-item">
+                  <strong>02</strong>
+                  Помогаем поддерживать внутренние процедуры в актуальном виде.
+                </div>
+                <div class="fact animate-item">
+                  <strong>03</strong>
+                  Оцениваем риски и формируем практичные рекомендации.
+                </div>
+                <div class="fact animate-item">
+                  <strong>04</strong>
+                  Готовим материалы для руководства и сотрудников.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="services" aria-labelledby="services-title" data-animate="cards">
+          <div class="section-inner">
+            <p class="section-label">Направления</p>
+            <h2 id="services-title">Чем занимается организация</h2>
+            <div class="grid">
+              <article class="service-card animate-item">
+                <span class="card-number">1</span>
+                <h3>Комплаенс-процедуры</h3>
+                <p>
+                  Описание правил, контрольных точек и ответственных ролей для
+                  соблюдения внутренних и внешних требований.
+                </p>
+              </article>
+              <article class="service-card animate-item">
+                <span class="card-number">2</span>
+                <h3>Оценка рисков</h3>
+                <p>
+                  Анализ процессов, выявление уязвимостей и подготовка
+                  приоритетных мер по снижению рисков.
+                </p>
+              </article>
+              <article class="service-card animate-item">
+                <span class="card-number">3</span>
+                <h3>Внутренний контроль</h3>
+                <p>
+                  Настройка проверок, мониторинга и регулярной отчетности по
+                  ключевым зонам ответственности.
+                </p>
+              </article>
+              <article class="service-card animate-item">
+                <span class="card-number">4</span>
+                <h3>Методология</h3>
+                <p>
+                  Подготовка положений, регламентов, чек-листов, памяток и
+                  других материалов для повседневной работы.
+                </p>
+              </article>
+              <article class="service-card animate-item">
+                <span class="card-number">5</span>
+                <h3>Обучение</h3>
+                <p>
+                  Информационные материалы и практические сессии для сотрудников
+                  по правилам поведения и внутренним требованиям.
+                </p>
+              </article>
+              <article class="service-card animate-item">
+                <span class="card-number">6</span>
+                <h3>Сопровождение</h3>
+                <p>
+                  Поддержка актуальности документов, разбор изменений и помощь
+                  при подготовке к проверкам.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="process" aria-labelledby="process-title" data-animate="steps">
+          <div class="section-inner split">
+            <div>
+              <p class="section-label">Подход</p>
+              <h2 id="process-title">Сначала контекст, затем понятная система.</h2>
+              <p class="lead">
+                Компания ориентируется на практичные решения: без лишней
+                бюрократии, но с достаточной детализацией для реальной работы.
+              </p>
+            </div>
+            <div class="process">
+              <article class="process-step animate-item">
+                <div>
+                  <h3>Диагностика</h3>
+                  <p>Изучаем процессы, документы, роли и действующие требования.</p>
+                </div>
+              </article>
+              <article class="process-step animate-item">
+                <div>
+                  <h3>Карта контроля</h3>
+                  <p>Определяем ключевые риски, контрольные точки и владельцев процесса.</p>
+                </div>
+              </article>
+              <article class="process-step animate-item">
+                <div>
+                  <h3>Документы</h3>
+                  <p>Готовим правила, шаблоны и материалы в понятной структуре.</p>
+                </div>
+              </article>
+              <article class="process-step animate-item">
+                <div>
+                  <h3>Поддержка</h3>
+                  <p>Помогаем внедрять процедуры и обновлять их при изменениях.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section principles-band" aria-labelledby="principles-title">
+          <div class="section-inner">
+            <p class="section-label">Принципы</p>
+            <h2 id="principles-title">Спокойная работа с ответственными темами.</h2>
+            <div class="principles-grid">
+              <article class="principle big">
+                <h3>Прозрачность</h3>
+                <p>
+                  Хороший контроль должен быть понятен тем, кто принимает решения,
+                  и тем, кто выполняет работу каждый день.
+                </p>
+              </article>
+              <div class="principle-column">
+                <article class="principle">
+                  <h3>Конфиденциальность</h3>
+                  <p>
+                    Информация об организации, процессах и документах требует
+                    аккуратного обращения.
+                  </p>
+                </article>
+                <article class="principle">
+                  <h3>Практичность</h3>
+                  <p>
+                    Рекомендации должны быть применимы в реальной операционной
+                    среде, а не существовать только на бумаге.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="details" aria-labelledby="details-title">
+          <div class="section-inner details">
+            <div>
+              <p class="section-label">Сведения</p>
+              <h2 id="details-title">Реквизиты и официальная информация</h2>
+              <p class="lead">
+                Этот блок подготовлен как место для актуальных данных компании.
+                Перед публикацией замените значения на сведения из ЕГРЮЛ и
+                внутренних документов.
+              </p>
+            </div>
+            <ul class="requisites">
+              <li>
+                <span>Полное наименование</span>
+                <strong>Общество с ограниченной ответственностью «Центр Комплаенс-Контроля»</strong>
+              </li>
+              <li>
+                <span>Сокращенно</span>
+                <strong>ООО «Центр Комплаенс-Контроля»</strong>
+              </li>
+              <li>
+                <span>ИНН / ОГРН</span>
+                <strong>3525446062/1193525023196</strong>
+              </li>
+              <li>
+                <span>Адрес</span>
+                <strong>127015, г. Москва, вн. тер. г. муниципальный округ Беговой, Бумажный проезд, д. 19, помещ. 15/4В</strong>
+              </li>
+              <li>
+                <span>Руководитель</span>
+                <strong>Укажите должность и ФИО при необходимости</strong>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section contact-band" id="contacts" aria-labelledby="contacts-title">
+          <div class="section-inner contact-panel">
+            <div>
+              <p class="section-label">Контакты</p>
+              <h2 id="contacts-title">Связь с организацией</h2>
+              <p>
+                Добавьте рабочую почту, телефон и адрес офиса. Блок остается
+                информационным и не превращает сайт в продающую страницу.
+              </p>
+            </div>
+            <div class="contact-links" aria-label="Контактные данные">
+              <a class="contact-link" href="mailto:info@example.ru">
+                <span>info@example.ru</span>
+                <span>↗</span>
+              </a>
+              <a class="contact-link" href="tel:+70000000000">
+                <span>+7 000 000-00-00</span>
+                <span>↗</span>
+              </a>
+              <div class="contact-link">
+                <span>Адрес будет добавлен</span>
+                <span>•</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© ООО «Центр Комплаенс-Контроля»</span>
+        <span>Спартак - чемпион!</span>
+      </footer>
+    </div>
+    <script>
+      const animatedSections = document.querySelectorAll("[data-animate]");
+      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      if (motionQuery.matches || !("IntersectionObserver" in window)) {
+        animatedSections.forEach((section) => section.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.classList.toggle("is-visible", entry.isIntersecting);
+            });
+          },
+          {
+            rootMargin: "-18% 0px -22%",
+            threshold: 0.18,
+          }
+        );
+
+        animatedSections.forEach((section) => observer.observe(section));
+      }
+    </script>
+  </body>
+</html>
